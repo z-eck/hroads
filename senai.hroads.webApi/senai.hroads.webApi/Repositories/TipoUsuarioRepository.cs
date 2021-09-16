@@ -1,4 +1,5 @@
-﻿using senai.hroads.webApi.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.hroads.webApi.Contexts;
 using senai.hroads.webApi.Domains;
 using senai.hroads.webApi.Interfaces;
 using System;
@@ -12,22 +13,32 @@ namespace senai.hroads.webApi.Repositories
         HRoadsContext ctx = new HRoadsContext();
         public void Atualizar(TipoUsuario TipoUsuarioAtual)
         {
-            throw new NotImplementedException();
+            TipoUsuario tipoBuscado = ctx.TipoUsuarios.Find(TipoUsuarioAtual.IdTipoUsuario);
+
+            tipoBuscado.Titulo = TipoUsuarioAtual.Titulo;
+
+            ctx.Update(tipoBuscado);
+
+            ctx.SaveChanges();
         }
 
         public TipoUsuario BuscarPorId(int idTipoUsuario)
         {
-            throw new NotImplementedException();
+            return ctx.TipoUsuarios.FirstOrDefault(e => e.IdTipoUsuario == idTipoUsuario);
         }
 
         public void Cadastrar(TipoUsuario novoTipoUsuario)
         {
-            throw new NotImplementedException();
+            ctx.TipoUsuarios.Add(novoTipoUsuario);
+
+            ctx.SaveChanges();
         }
 
         public void Deletar(int idTipoUsuario)
         {
-            throw new NotImplementedException();
+            ctx.TipoUsuarios.Remove(BuscarPorId(idTipoUsuario));
+
+            ctx.SaveChanges();
         }
 
         public List<TipoUsuario> ListarTodos()
