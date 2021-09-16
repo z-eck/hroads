@@ -7,13 +7,13 @@ using senai.hroads.webApi.Domains;
 
 namespace senai.hroads.webApi.Contexts
 {
-    public partial class HRoadsContextt : DbContext
+    public partial class HRoadsContext : DbContext
     {
-        public HRoadsContextt()
+        public HRoadsContext()
         {
         }
 
-        public HRoadsContextt(DbContextOptions<HRoadsContextt> options)
+        public HRoadsContext(DbContextOptions<HRoadsContext> options)
             : base(options)
         {
         }
