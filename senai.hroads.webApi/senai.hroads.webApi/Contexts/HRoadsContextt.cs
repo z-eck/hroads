@@ -7,13 +7,13 @@ using senai.hroads.webApi.Domains;
 
 namespace senai.hroads.webApi.Contexts
 {
-    public partial class InLockContext : DbContext
+    public partial class HRoadsContextt : DbContext
     {
-        public InLockContext()
+        public HRoadsContextt()
         {
         }
 
-        public InLockContext(DbContextOptions<InLockContext> options)
+        public HRoadsContextt(DbContextOptions<HRoadsContextt> options)
             : base(options)
         {
         }
@@ -30,7 +30,7 @@ namespace senai.hroads.webApi.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-// #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-8FOKHBA\\SQLEXPRESS; initial catalog=SENAI_HROADS_TARDE; user Id=sa; pwd=senai@132;");
             }
         }
