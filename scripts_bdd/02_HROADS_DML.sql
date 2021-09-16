@@ -26,5 +26,5 @@ VALUES ('ADMINISTRADOR'), ('JOGADOR');
 GO
 
 INSERT INTO USUARIO(idTipoUsuario, email, senha)
-VALUES (1, 'admin@admin.com', 'admin132'), (2, 'glima@jogador.com', 'JOGADOR'), (2, 'zeck@jogador.com', 'JOGADOR');
+VALUES (1, 'admin@admin.com', 'admin132'), (2, 'glima@jogador.com', 'glima132'), (2, 'zeck@jogador.com', 'erick132');
 GO
