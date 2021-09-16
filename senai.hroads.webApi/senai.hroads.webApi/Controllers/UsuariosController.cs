@@ -38,7 +38,7 @@ namespace senai.hroads.webApi.Controllers
             {
                 return BadRequest(erro);
             }
-            
+
         }
 
         [HttpGet("{idUsuario}")]
@@ -59,7 +59,7 @@ namespace senai.hroads.webApi.Controllers
         {
             try
             {
-                 _usuarioRepository.Cadastrar(novoUsuario);
+                _usuarioRepository.Cadastrar(novoUsuario);
 
                 return StatusCode(201);
             }
@@ -70,7 +70,7 @@ namespace senai.hroads.webApi.Controllers
         }
 
         [HttpPut]
-        public IActionResult Atualizar (Usuario usuarioAtualizado)
+        public IActionResult Atualizar(Usuario usuarioAtualizado)
         {
             try
             {
@@ -85,7 +85,7 @@ namespace senai.hroads.webApi.Controllers
         }
 
         [HttpDelete("{idUsuario}")]
-        public IActionResult Deletar (int idUsuario)
+        public IActionResult Deletar(int idUsuario)
         {
             try
             {
