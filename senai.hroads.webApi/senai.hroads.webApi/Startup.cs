@@ -59,10 +59,10 @@ namespace senai.hroads.webApi
                         ValidateLifetime = true,
 
                         // Forma de criptografia e ainda valida a chave de autenticação
-                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("aindaadecidir")),
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("WCIYHBWE683B9BD7gdbw8bw3827ia8qwSADA7ew")),
 
                         // Valida o tempo de expiração do token
-                        ClockSkew = TimeSpan.FromMinutes(30),
+                        ClockSkew = TimeSpan.FromMinutes(35),
 
                         // Nome do issuer, de onde está vindo
                         ValidIssuer = "senai.hroads.webApi",

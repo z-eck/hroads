@@ -2,10 +2,8 @@
 using senai.hroads.webApi.Contexts;
 using senai.hroads.webApi.Domains;
 using senai.hroads.webApi.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace senai.hroads.webApi.Repositories
 {
@@ -52,7 +50,7 @@ namespace senai.hroads.webApi.Repositories
 
         public Usuario Login(string email, string senha)
         {
-            throw new NotImplementedException();
+            return ctx.Usuarios.FirstOrDefault(e => e.Email == email || e.Senha == senha);
         }
     }
 }
