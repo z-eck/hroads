@@ -9,7 +9,7 @@ namespace senai.hroads.webApi.Repositories
 {
     public class PersonagemRepository : IPersonagemRepository
     {
-        public void Atualizar(Personagem personagemAtualizado)
+        public void Atualizar(int idPersonagem, Personagem personagemAtualizado)
         {
             throw new NotImplementedException();
         }

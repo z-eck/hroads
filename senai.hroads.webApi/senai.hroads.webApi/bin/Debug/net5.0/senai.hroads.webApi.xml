@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.hroads.webApi</name>
+    </assembly>
+    <members>
+        <member name="T:senai.hroads.webApi.Interfaces.IPersonagemRepository">
+            <summary>
+            Interface responsável pelo PersonagemRepository
+            </summary>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IPersonagemRepository.ListarTodos">
+            <summary>
+            Lista todos os personagens existentes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IPersonagemRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um personagem por meio do seu id
+            </summary>
+            <param name="idPersonagem">Id do personagem que será buscado</param>
+            <returns>Um personagem encontrado</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IPersonagemRepository.Cadastrar(senai.hroads.webApi.Domains.Personagem)">
+            <summary>
+            Cadastra um novo personagem
+            </summary>
+            <param name="novoPersonagem">Objeto novoPersonagem com os dados que serão cadastrados</param>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IPersonagemRepository.Atualizar(System.Int32,senai.hroads.webApi.Domains.Personagem)">
+            <summary>
+            Atualiza um personagem existente
+            </summary>
+            <param name="idPersonagem">Id do personagem que será atualizado</param>
+            <param name="personagemAtualizado">objeto personagemAtualizado com os dados que serão atualizados</param>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IPersonagemRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um personagem existente
+            </summary>
+            <param name="idPersonagem">Id do personagem que será deletado</param>
+        </member>
+        <member name="T:senai.hroads.webApi.Interfaces.ITipoUsuarioRepository">
+            <summary>
+            Interface responsável pelo TipoUsuarioRepository
+            </summary>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.ITipoUsuarioRepository.ListarTodos">
+            <summary>
+            Lista de todos os tipos de usuário
+            </summary>
+            <returns>Uma lista de todos os tipos de usuário existentes</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.ITipoUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um tipo de usuário por meio do seu id
+            </summary>
+            <param name="idTipoUsuario">Id do tipo de usuário que será buscado</param>
+            <returns></returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.ITipoUsuarioRepository.Cadastrar(senai.hroads.webApi.Domains.TipoUsuario)">
+            <summary>
+            Cadastra um novo tipo de usuario no sistema
+            </summary>
+            <param name="novoTipoUsuario">Objeto novoTipoUsuario com seus dados</param>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.ITipoUsuarioRepository.Atualizar(senai.hroads.webApi.Domains.TipoUsuario)">
+            <summary>
+            Atualiza um tipo de usuário cadastrado
+            </summary>
+            <param name="TipoUsuarioAtual">Objeto tipoAtualizado com seus novos dados atualizados</param>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.ITipoUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um tipo de usuário do sistema
+            </summary>
+            <param name="idTipoUsuario">Id do tipoUsuario que será deletado</param>
+        </member>
+        <member name="T:senai.hroads.webApi.Interfaces.IUsuarioRepository">
+            <summary>
+            Interface responsável pelo UsuarioRepository
+            </summary>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IUsuarioRepository.Cadastrar(senai.hroads.webApi.Domains.Usuario)">
+            <summary>
+            Cadastra um novo Usuario no sistema
+            </summary>
+            <param name="novoUsuario">Objeto novoUsuario com seus dados</param>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IUsuarioRepository.ListarTodos">
+            <summary>
+            Lista todos os usuarios cadastrado
+            </summary>
+            <returns>Lista de todos os usuarios cadastrado</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IUsuarioRepository.AtualizarUsuario(senai.hroads.webApi.Domains.Usuario)">
+            <summary>
+            Atualiza um usuario cadastrado
+            </summary>
+            <param name="usuarioAtualizado">objeto usuarioAtualizado com os dados atualizados</param>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um usuário por meio de seu Id
+            </summary>
+            <param name="idUsuario">Id do usuário que será buscado</param>
+            <returns>Um usuário buscado</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário cadastrado
+            </summary>
+            <param name="idUsuario">Id do usuário que será deletado</param>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email">Email do usuario</param>
+            <param name="senha">Senha do usuario</param>
+            <returns>Retorna um usuário encontrado</returns>
+        </member>
+    </members>
+</doc>

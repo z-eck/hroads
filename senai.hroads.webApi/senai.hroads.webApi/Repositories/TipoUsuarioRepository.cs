@@ -1,4 +1,5 @@
-﻿using senai.hroads.webApi.Domains;
+﻿using senai.hroads.webApi.Contexts;
+using senai.hroads.webApi.Domains;
 using senai.hroads.webApi.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace senai.hroads.webApi.Repositories
 {
     public class TipoUsuarioRepository : ITipoUsuarioRepository
     {
-        
+        HRoadsContext ctx = new HRoadsContext();
         public void Atualizar(TipoUsuario TipoUsuarioAtual)
         {
             throw new NotImplementedException();
@@ -32,7 +33,7 @@ namespace senai.hroads.webApi.Repositories
 
         public List<TipoUsuario> ListarTodos()
         {
-            throw new NotImplementedException();
+            return ctx.TipoUsuarios.ToList();
         }
     }
 }
