@@ -14,7 +14,7 @@ namespace senai.hroads.webApi.Controllers
     // ex: http://localhost:5000/api/Personagens
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "2")]
     public class PersonagensController : ControllerBase
     {
         private IPersonagemRepository _personagemRepository { get; set; }
@@ -22,6 +22,97 @@ namespace senai.hroads.webApi.Controllers
         public PersonagensController()
         {
             _personagemRepository = new PersonagemRepository();
+        }
+        [HttpGet]
+        public IActionResult Listar()
+        {
+            try
+            {
+                return Ok(_personagemRepository.ListarTodos());
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        [HttpGet("{idPersonagem}")]
+        public IActionResult BuscarPorId(int idPersonagem)
+        {
+            try
+            {
+                if (idPersonagem <= 0)
+                {
+                    return NotFound(
+                    new
+                    {
+                        mensagem = "Personagem não encontrado!",
+                        errorStatus = true
+                    }
+                    );
+                }
+                return Ok(_personagemRepository.BuscarPorId(idPersonagem));
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Cadastrar(Personagem novoPersonagem)
+        {
+            try
+            {
+                _personagemRepository.Cadastrar(novoPersonagem);
+
+                return StatusCode(201);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        [HttpPut]
+        public IActionResult Atualizar(Personagem personagemAtualizado)
+        {
+            try
+            {
+                _personagemRepository.Atualizar(personagemAtualizado);
+
+                return StatusCode(204);
+
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        [HttpDelete("{idPersonagem}")]
+        public IActionResult Deletar(int idPersonagem)
+        {
+            try
+            {
+                if (idPersonagem <= 0)
+                {
+                    return NotFound(
+                    new
+                    {
+                        mensagem = "Personagem não encontrado não encontrado!",
+                        errorStatus = true
+                    }
+                    );
+                }
+                _personagemRepository.Deletar(idPersonagem);
+
+                return StatusCode(204);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
         }
     }
 }

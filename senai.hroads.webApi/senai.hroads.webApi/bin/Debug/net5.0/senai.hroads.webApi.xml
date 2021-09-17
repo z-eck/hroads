@@ -28,11 +28,10 @@
             </summary>
             <param name="novoPersonagem">Objeto novoPersonagem com os dados que serão cadastrados</param>
         </member>
-        <member name="M:senai.hroads.webApi.Interfaces.IPersonagemRepository.Atualizar(System.Int32,senai.hroads.webApi.Domains.Personagem)">
+        <member name="M:senai.hroads.webApi.Interfaces.IPersonagemRepository.Atualizar(senai.hroads.webApi.Domains.Personagem)">
             <summary>
             Atualiza um personagem existente
             </summary>
-            <param name="idPersonagem">Id do personagem que será atualizado</param>
             <param name="personagemAtualizado">objeto personagemAtualizado com os dados que serão atualizados</param>
         </member>
         <member name="M:senai.hroads.webApi.Interfaces.IPersonagemRepository.Deletar(System.Int32)">

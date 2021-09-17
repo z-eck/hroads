@@ -1,8 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using senai.hroads.webApi.Contexts;
+﻿using senai.hroads.webApi.Contexts;
 using senai.hroads.webApi.Domains;
 using senai.hroads.webApi.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

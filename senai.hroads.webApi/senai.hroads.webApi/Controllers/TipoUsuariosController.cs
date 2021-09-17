@@ -1,12 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using senai.hroads.webApi.Domains;
 using senai.hroads.webApi.Interfaces;
 using senai.hroads.webApi.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace senai.hroads.webApi.Controllers
 {
@@ -17,6 +14,7 @@ namespace senai.hroads.webApi.Controllers
     // ex: http://localhost:5000/api/TipoUsuarios
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "1")]
     public class TipoUsuariosController : ControllerBase
     {
         private ITipoUsuarioRepository _tipoUsuarioRepository { get; set; }
@@ -49,7 +47,7 @@ namespace senai.hroads.webApi.Controllers
                     return NotFound(
                     new
                     {
-                        mensagem = "Tipo de Usuário não encontrado não encontrado!",
+                        mensagem = "Tipo de Usuário não encontrado!",
                         errorStatus = true
                     }
                 );

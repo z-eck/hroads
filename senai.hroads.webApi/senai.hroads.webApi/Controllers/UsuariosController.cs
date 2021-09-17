@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using senai.hroads.webApi.Domains;
 using senai.hroads.webApi.Interfaces;
 using senai.hroads.webApi.Repositories;
@@ -14,6 +15,7 @@ namespace senai.hroads.webApi.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize (Roles = "1")]
     public class UsuariosController : ControllerBase
     {
         private IUsuarioRepository _usuarioRepository { get; set; }
@@ -26,8 +28,6 @@ namespace senai.hroads.webApi.Controllers
         [HttpGet]
         public IActionResult Listar()
         {
-            Usuario usuarioBuscado = new Usuario();
-
             try
             {
                 return Ok(_usuarioRepository.ListarTodos());
@@ -92,6 +92,7 @@ namespace senai.hroads.webApi.Controllers
         [HttpPut]
         public IActionResult Atualizar(Usuario usuarioAtualizado)
         {
+
             try
             {
                 _usuarioRepository.AtualizarUsuario(usuarioAtualizado);
@@ -107,10 +108,9 @@ namespace senai.hroads.webApi.Controllers
         [HttpDelete("{idUsuario}")]
         public IActionResult Deletar(int idUsuario)
         {
-            Usuario usuarioBuscado = new Usuario();
             try
             {
-                if (usuarioBuscado.IdTipoUsuario <= 0)
+                if (idUsuario <= 0)
                 {
                     return NotFound(
                     new

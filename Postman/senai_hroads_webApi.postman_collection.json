@@ -284,6 +284,161 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Personagens",
+			"item": [
+				{
+					"name": "Personagens.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjMxOTA0MDY0LCJpc3MiOiJzZW5haS5ocm9hZHMud2ViQXBpIiwiYXVkIjoic2VuYWkuaHJvYWRzLndlYkFwaSJ9.YzZjT5UfYBWOqxhZQYcPfICR0NHjVIQhl_hQwemXXxY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idClasse\": 2,\r\n        \"nomePersonagem\": \"SuperSuper\",\r\n        \"ptsVida\": 15,\r\n        \"ptsMana\": 20,\r\n        \"dataCriacao\": \"2002-05-16\",\r\n        \"dataAtualizacao\": \"2021-10-12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Personagens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Personagens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Personagens.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjMxOTA0MDY0LCJpc3MiOiJzZW5haS5ocm9hZHMud2ViQXBpIiwiYXVkIjoic2VuYWkuaHJvYWRzLndlYkFwaSJ9.YzZjT5UfYBWOqxhZQYcPfICR0NHjVIQhl_hQwemXXxY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Personagens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Personagens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Personagens.BuscarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Personagens/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Personagens",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Personagens.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjMxOTA0MDY0LCJpc3MiOiJzZW5haS5ocm9hZHMud2ViQXBpIiwiYXVkIjoic2VuYWkuaHJvYWRzLndlYkFwaSJ9.YzZjT5UfYBWOqxhZQYcPfICR0NHjVIQhl_hQwemXXxY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idPersonagem\": 6,\r\n        \"idClasse\": 2,\r\n        \"nomePersonagem\": \"KGBee\",\r\n        \"ptsVida\": 12,\r\n        \"ptsMana\": 10,\r\n        \"dataCriacao\": \"2005-05-16\",\r\n        \"dataAtualizacao\": \"2020-10-12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Personagens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Personagens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Personagens.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Personagens/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Personagens",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
