@@ -64,6 +64,7 @@ namespace senai.hroads.webApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "2, 1")]
         public IActionResult Cadastrar(Usuario novoUsuario)
         {
             Usuario usuarioBuscado = new Usuario();

@@ -14,7 +14,7 @@ namespace senai.hroads.webApi.Controllers
     // ex: http://localhost:5000/api/Personagens
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "2")]
+    [Authorize(Roles = "2, 1")]
     public class PersonagensController : ControllerBase
     {
         private IPersonagemRepository _personagemRepository { get; set; }
@@ -24,6 +24,7 @@ namespace senai.hroads.webApi.Controllers
             _personagemRepository = new PersonagemRepository();
         }
         [HttpGet]
+        [Authorize(Roles = "1")]
         public IActionResult Listar()
         {
             try

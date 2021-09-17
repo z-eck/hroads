@@ -45,7 +45,7 @@ namespace senai.hroads.webApi.Repositories
 
         public List<Personagem> ListarTodos()
         {
-            return ctx.Personagems.ToList();
+            return ctx.Personagems.OrderBy(e => e.NomePersonagem).ToList();
         }
     }
 }
