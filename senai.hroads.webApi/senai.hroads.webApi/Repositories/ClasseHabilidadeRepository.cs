@@ -51,5 +51,15 @@ namespace senai.hroads.webApi.Repositories
         {
             return context.ClasseHabilidades.ToList();
         }
+        
+        public List<Classe> ListarComHabilidades()
+        {
+            return context.Classes.Include(ch => ch.IdHabilidadeNavegation).ToList();
+        }
+        
+        public List<Classe> ListarComClasse()
+        {
+            return context.ClasseHabilidades.Include(ch => ch.Classes).ToList();
+        }
     }
 }
