@@ -14,7 +14,7 @@ namespace senai.hroads.webApi.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class ClasseHabilidadesController : ControllerBase
     {
         private IClasseHabilidadeRepository ClsshblddRepository { get; set; }
@@ -23,21 +23,21 @@ namespace senai.hroads.webApi.Controllers
             ClsshblddRepository = new ClasseHabilidadeRepository();
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet]
         public IActionResult Listar()
         {
             return Ok(ClsshblddRepository.ListarTodos());
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet("{id}")]
         public IActionResult BuscarID(int id)
         {
             return Ok(ClsshblddRepository.BuscarPorID(id));
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         [HttpPost]
         public IActionResult Cadastrar(ClasseHabilidade novaClasseHabilidade)
         {
@@ -46,7 +46,7 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(201);
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         [HttpPut("{id}")]
         public IActionResult AtualizarURL(int id, ClasseHabilidade chAtualizada)
         {
@@ -55,7 +55,7 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(204);
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "ADMINISTRADOR")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
@@ -64,11 +64,18 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(204);
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
-        //[HttpGet("habilidades")]
-        //public IActionResult ListarComHabilidades()
-        //{
-        //    return Ok(ClsshblddRepository.ListarComHabilidades());
-        //}
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("habilidades")]
+        public IActionResult ListarComHabilidades()
+        {
+            return Ok(ClsshblddRepository.ListarComHabilidades());
+        }
+        
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpGet("classes")]
+        public IActionResult ListarComClasses()
+        {
+            return Ok(ClsshblddRepository.ListarComClasses());
+        }
     }
 }
