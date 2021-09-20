@@ -42,5 +42,17 @@ namespace senai.hroads.webApi.Interfaces
         /// </summary>
         /// <param name="idClasseHabilidade">ID da classe-habilidade que será utilizada para a remoção de uma informação</param>
         void Deletar(int idClasseHabilidade);
+       
+        /// <summary>
+        /// Listará todas as classe-habilidades, com as habilidades onde estão inclusas
+        /// </summary>
+        /// <returns>A lista com todas as classe-habilidades, com as habilidades</returns>
+        List<Classe> ListarComHabilidade();
+       
+        /// <summary>
+        /// Listará todas as classe-habilidade, com as classes onde estão inclusas
+        /// </summary>
+        /// <returns>A lista com todas as classe-habilidades, com as classes</returns>
+        List<Classe> ListarComClasse();
     }
 }
