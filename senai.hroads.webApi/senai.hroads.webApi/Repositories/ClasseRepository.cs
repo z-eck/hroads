@@ -47,11 +47,6 @@ namespace senai.hroads.webApi.Repositories
             context.SaveChanges();
         }
 
-        //public List<Classe> ListarComHabilidades()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         public List<Classe> ListarComPersonagem()
         {
             return context.Classes.Include(c => c.Personagems).ToList();

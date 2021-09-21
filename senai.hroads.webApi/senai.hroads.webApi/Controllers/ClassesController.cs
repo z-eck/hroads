@@ -23,21 +23,18 @@ namespace senai.hroads.webApi.Controllers
             ClssRepository = new ClasseRepository();
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet]
         public IActionResult Listar()
         {
             return Ok(ClssRepository.ListarTodos());
         }
-
-        //[Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet("{id}")]
         public IActionResult BuscarID(int id)
         {
             return Ok(ClssRepository.BuscarPorID(id));
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Classe novaClasse)
         {
@@ -46,7 +43,7 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(201);
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "1")]
         [HttpPut("{idClasse}")]
         public IActionResult AtualizarURL(int idClasse, Classe classeAtualizada)
         {
@@ -63,7 +60,7 @@ namespace senai.hroads.webApi.Controllers
             
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
@@ -72,7 +69,7 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(204);
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "1")]
         [HttpGet("personagem")]
         public IActionResult ListarComPersonagem()
         {
