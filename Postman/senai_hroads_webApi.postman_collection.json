@@ -507,7 +507,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:5000/api/Classes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Classes",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -516,7 +528,28 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"url": null
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeClasse\" : \"Ranger\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Classes/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Classes",
+								"8"
+							]
+						}
 					},
 					"response": []
 				},
@@ -525,7 +558,19 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:5000/api/Classes/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Classes",
+								"8"
+							]
+						}
 					},
 					"response": []
 				}
@@ -609,7 +654,28 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"url": null
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoHabilidade\" : \"2\",\r\n    \"nomeHabilidade\" : \"Velocidade\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Habilidades/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Habilidades",
+								"4"
+							]
+						}
 					},
 					"response": []
 				},
@@ -618,7 +684,19 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:5000/api/Habilidades/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Habilidades",
+								"4"
+							]
+						}
 					},
 					"response": []
 				}
