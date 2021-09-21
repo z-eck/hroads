@@ -30,9 +30,8 @@ namespace senai.hroads.webApi.Interfaces
         /// <summary>
         /// Atualizará uma informação, sendo buscada pela URL
         /// </summary>
-        /// <param name="idClasse">ID da classe que será utilizada para a identificação de qual ID que será atualizada</param>
         /// <param name="classeAtualizada">Objeto que estará no corpo da requisição que servirá para ser atualizado</param>
-        void AtualizarURL(int idClasse, Classe classeAtualizada);
+        void Atualizar(Classe classeAtualizada);
 
         /// <summary>
         /// Deletará uma classe

@@ -23,21 +23,19 @@ namespace senai.hroads.webApi.Controllers
             HblddRepository = new HabilidadeRepository();
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet]
         public IActionResult Listar()
         {
             return Ok(HblddRepository.ListarTodos());
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet("{id}")]
         public IActionResult BuscarID(int id)
         {
             return Ok(HblddRepository.BuscarPorID(id));
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        //[Authorize(Roles = "1)]
         [HttpPost]
         public IActionResult Cadastrar(Habilidade novaHabilidade)
         {
@@ -46,16 +44,16 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(201);
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
-        [HttpPut("{id}")]
-        public IActionResult AtualizarURL(int id, Habilidade habilidadeAtualizada)
+        //[Authorize(Roles = "1")]
+        [HttpPut]
+        public IActionResult AtualizarURL(Habilidade habilidadeAtualizada)
         {
-            HblddRepository.AtualizarURL(id, habilidadeAtualizada);
+            HblddRepository.Atualizar(habilidadeAtualizada);
 
             return StatusCode(204);
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+        //[Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
@@ -64,14 +62,13 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(204);
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet("tipohabilidades")]
         public IActionResult ListarComTipoHabilidades()
         {
             return Ok(HblddRepository.ListarComTipoHabilidades());
         }
 
-        //[Authorize(Roles = "ADMINISTRADOR")]
+
         [HttpGet("classehabilidades")]
         public IActionResult ListarComClasseHabilidades()
         {

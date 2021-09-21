@@ -13,9 +13,9 @@ namespace senai.hroads.webApi.Repositories
     {
         readonly HRoadsContext context = new();
 
-        public void AtualizarURL(int idHabilidade, Habilidade habilidadeAtualizada)
+        public void Atualizar(Habilidade habilidadeAtualizada)
         {
-            Habilidade habilidadePesquisada = context.Habilidades.Find(idHabilidade);
+            Habilidade habilidadePesquisada = context.Habilidades.Find(habilidadeAtualizada.IdHabilidade);
 
             if (habilidadeAtualizada.NomeHabilidade != null)
             {

@@ -35,7 +35,7 @@ namespace senai.hroads.webApi.Interfaces
         /// </summary>
         /// <param name="idClasseHabilidade">ID da classe-habilidade que será utilizada para a identificação de qual ID que será atualizada</param>
         /// <param name="chAtualizada">Objeto que estará no corpo da requisição que servirá para ser atualizado</param>
-        void AtualizarURL(int idClasseHabilidade, ClasseHabilidade chAtualizada);
+        void Atualizar(int idClasseHabilidade, ClasseHabilidade chAtualizada);
 
         /// <summary>
         /// Deletará uma classe-habilidade

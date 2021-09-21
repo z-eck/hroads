@@ -33,9 +33,8 @@ namespace senai.hroads.webApi.Interfaces
         /// <summary>
         /// Atualizará uma informação, sendo buscada pela URL
         /// </summary>
-        /// <param name="idHabilidade">ID da habilidade que será utilizada para a identificação de qual ID que será atualizada</param>
         /// <param name="habilidadeAtualizada">Objeto que estará no corpo da requisição que servirá para ser atualizado</param>
-        void AtualizarURL(int idHabilidade, Habilidade habilidadeAtualizada);
+        void Atualizar(Habilidade habilidadeAtualizada);
 
         /// <summary>
         /// Deletará uma habilidade

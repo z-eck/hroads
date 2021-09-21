@@ -2,10 +2,8 @@
 using senai.hroads.webApi.Contexts;
 using senai.hroads.webApi.Domains;
 using senai.hroads.webApi.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace senai.hroads.webApi.Repositories
 {
@@ -14,7 +12,7 @@ namespace senai.hroads.webApi.Repositories
 
         HRoadsContext context = new HRoadsContext();
 
-        public void AtualizarURL(int idClasse, Classe classeAtualizada)
+        public void Atualizar(Classe classeAtualizada)
         {
             Classe classePesquisada = context.Classes.Find(classeAtualizada.IdClasse);
 
