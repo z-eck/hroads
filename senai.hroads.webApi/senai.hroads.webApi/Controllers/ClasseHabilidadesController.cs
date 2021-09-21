@@ -23,21 +23,21 @@ namespace senai.hroads.webApi.Controllers
             ClsshblddRepository = new ClasseHabilidadeRepository();
         }
 
-        [Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()
         {
             return Ok(ClsshblddRepository.ListarTodos());
         }
 
-        [Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "1")]
         [HttpGet("{id}")]
         public IActionResult BuscarID(int id)
         {
             return Ok(ClsshblddRepository.BuscarPorID(id));
         }
 
-        [Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(ClasseHabilidade novaClasseHabilidade)
         {
@@ -46,7 +46,7 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(201);
         }
 
-        [Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult AtualizarURL(int id, ClasseHabilidade chAtualizada)
         {
@@ -55,7 +55,7 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(204);
         }
 
-        [Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
@@ -63,19 +63,12 @@ namespace senai.hroads.webApi.Controllers
 
             return StatusCode(204);
         }
-
-        [Authorize(Roles = "ADMINISTRADOR")]
-        [HttpGet("habilidades")]
-        public IActionResult ListarComHabilidades()
-        {
-            return Ok(ClsshblddRepository.ListarComHabilidades());
-        }
         
-        [Authorize(Roles = "ADMINISTRADOR")]
+        [Authorize(Roles = "1")]
         [HttpGet("classes")]
         public IActionResult ListarComClasses()
         {
-            return Ok(ClsshblddRepository.ListarComClasses());
+            return Ok(ClsshblddRepository.ListarComClasseHabilidade());
         }
     }
 }

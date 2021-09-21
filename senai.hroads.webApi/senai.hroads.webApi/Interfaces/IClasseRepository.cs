@@ -41,12 +41,6 @@ namespace senai.hroads.webApi.Interfaces
         void Deletar(int idClasse);
 
         /// <summary>
-        /// Listará todas as classes, com as habilidades "linkadas"
-        /// </summary>
-        /// <returns>A lista com todas as classes com as habilidades</returns>
-        //List<Classe> ListarComHabilidades();
-
-        /// <summary>
         /// Listará todas as classes, com os personagens onde estão inclusas
         /// </summary>
         /// <returns>A lista com todas as classes, com os personagens</returns>

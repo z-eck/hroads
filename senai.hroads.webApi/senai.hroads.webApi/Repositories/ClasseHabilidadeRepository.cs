@@ -1,4 +1,5 @@
-﻿using senai.hroads.webApi.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.hroads.webApi.Contexts;
 using senai.hroads.webApi.Domains;
 using senai.hroads.webApi.Interfaces;
 using System;
@@ -11,14 +12,14 @@ namespace senai.hroads.webApi.Repositories
     public class ClasseHabilidadeRepository : IClasseHabilidadeRepository
     {
 
-        readonly HROADSContext context = new();
+        readonly HRoadsContext context = new();
 
         public void AtualizarURL(int idClasseHabilidade, ClasseHabilidade chAtualizada)
         {
             
             ClasseHabilidade chPesquisada = context.ClasseHabilidades.Find(idClasseHabilidade);
 
-            if (chAtualizada.IdClasseHabilidade != null)
+            if (chAtualizada.IdClasseHabilidade > 0)
             {
                 chPesquisada.IdClasseHabilidade = chAtualizada.IdClasseHabilidade;
 
@@ -51,15 +52,9 @@ namespace senai.hroads.webApi.Repositories
         {
             return context.ClasseHabilidades.ToList();
         }
-        
-        public List<ClasseHabilidade> ListarComHabilidades()
+        public List<ClasseHabilidade> ListarComClasseHabilidade()
         {
-            return context.Classes.Include(ch => ch.IdHabilidadeNavegation).ToList();
-        }
-        
-        public List<ClasseHabilidade> ListarComClasse()
-        {
-            return context.ClasseHabilidades.Include(ch => ch.Classes).ToList();
+            return context.ClasseHabilidades.Include(ch => ch.IdClasseNavigation).Include(ch => ch.IdHabilidadeNavigation).ThenInclude(h => h.IdTipoHabilidadeNavigation).ToList();
         }
     }
 }

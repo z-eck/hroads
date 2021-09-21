@@ -11,7 +11,7 @@ namespace senai.hroads.webApi.Repositories
 {
     public class HabilidadeRepository : IHabilidadeRepository
     {
-        readonly HROADSContext context = new();
+        readonly HRoadsContext context = new();
 
         public void AtualizarURL(int idHabilidade, Habilidade habilidadeAtualizada)
         {

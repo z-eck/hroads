@@ -47,10 +47,10 @@ namespace senai.hroads.webApi.Controllers
         }
 
         //[Authorize(Roles = "ADMINISTRADOR")]
-        [HttpPut("{id}")]
-        public IActionResult AtualizarURL(int id, Classe classeAtualizada)
+        [HttpPut("{idClasse}")]
+        public IActionResult AtualizarURL(int idClasse, Classe classeAtualizada)
         {
-            ClssRepository.AtualizarURL(id, classeAtualizada);
+            ClssRepository.AtualizarURL(idClasse, classeAtualizada);
 
             return StatusCode(204);
         }
