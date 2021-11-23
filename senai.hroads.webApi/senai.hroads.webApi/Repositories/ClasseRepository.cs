@@ -12,7 +12,7 @@ namespace senai.hroads.webApi.Repositories
     public class ClasseRepository : IClasseRepository
     {
 
-        readonly HROADSContext context = new();
+        readonly HRoadsContext context = new();
 
         public void AtualizarURL(int idClasse, Classe classeAtualizada)
         {

@@ -41,12 +41,6 @@
             </summary>
             <param name="idClasseHabilidade">ID da classe-habilidade que será utilizada para a remoção de uma informação</param>
         </member>
-        <member name="M:senai.hroads.webApi.Interfaces.IClasseHabilidadeRepository.ListarComClasseHabilidade">
-            <summary>
-            Listará todas as classe-habilidade, com as classes onde estão inclusas
-            </summary>
-            <returns>A lista com todas as classe-habilidades, com as classes</returns>
-        </member>
         <member name="M:senai.hroads.webApi.Interfaces.IClasseRepository.ListarTodos">
             <summary>
             Lista todas as classes
@@ -78,12 +72,6 @@
             Deletará uma classe
             </summary>
             <param name="idClasse">ID da classe que será utilizada para a remoção de uma informação</param>
-        </member>
-        <member name="M:senai.hroads.webApi.Interfaces.IClasseRepository.ListarComPersonagem">
-            <summary>
-            Listará todas as classes, com os personagens onde estão inclusas
-            </summary>
-            <returns>A lista com todas as classes, com os personagens</returns>
         </member>
         <member name="T:senai.hroads.webApi.Interfaces.IHabilidadeRepository">
             <summary>
@@ -121,18 +109,6 @@
             Deletará uma habilidade
             </summary>
             <param name="idHabilidade">ID da habilidade que será utilizada para a remoção de uma informação</param>
-        </member>
-        <member name="M:senai.hroads.webApi.Interfaces.IHabilidadeRepository.ListarComTipoHabilidades">
-            <summary>
-            Listará todas as habilidades, com tipos delas "linkadas"
-            </summary>
-            <returns>A lista com todas as habilidades com os tipos das habilidades</returns>
-        </member>
-        <member name="M:senai.hroads.webApi.Interfaces.IHabilidadeRepository.ListarComClasseHabilidades">
-            <summary>
-            Listará todas as habilidades, com as classes onde estão inclusas
-            </summary>
-            <returns>A lista com todas as habilidades, com as classes</returns>
         </member>
         <member name="T:senai.hroads.webApi.Interfaces.IPersonagemRepository">
             <summary>
@@ -206,12 +182,6 @@
             Deletará um tipo de habilidade
             </summary>
             <param name="idTipoHabilidade">ID do tipo de habilidade que será utilizado para a remoção de uma informação</param>
-        </member>
-        <member name="M:senai.hroads.webApi.Interfaces.ITipoHabilidadeRepository.ListarComHabilidades">
-            <summary>
-            Listará todos os tipos, com as habilidades "linkadas"
-            </summary>
-            <returns>A lista com todos os tipos de habilidades com as habilidades</returns>
         </member>
         <member name="T:senai.hroads.webApi.Interfaces.ITipoUsuarioRepository">
             <summary>

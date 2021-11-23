@@ -27,6 +27,17 @@ namespace senai.hroads.webApi
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://127.0.0.1:3000")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod();
+                                  });
+            });
+
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "senai.hroads.webApi", Version = "v1" });
 
@@ -93,6 +104,8 @@ namespace senai.hroads.webApi
             });
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
 
             // Habilita a autenticação
             app.UseAuthentication();
